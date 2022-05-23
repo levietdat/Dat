@@ -50,6 +50,11 @@ html {
     margin-bottom: 200px;
 }
 
+.navigation p:hover {
+    cursor: pointer;
+    color: #cb5d5c;
+}
+
 .navigation-item {
     display: flex;
     align-items: center;
@@ -129,6 +134,10 @@ html {
     border-radius: 50%;
 }
 
+.cirle-img.shadow {
+    box-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff, 0px 0px 20px #fff, 0px 0px 20px #fff;
+}
+
 .cirle-img {
     position: absolute;
     width: 403.19px;
@@ -160,7 +169,7 @@ html {
     bottom: -30px;
     font-size: 50px;
     color: #ccc;
-    text-shadow: 0px 5px 20px #fff, 0px 5px 20px #fff, 0px 5px 20px #fff, 0px 5px 20px #fff;
+    text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff;
     z-index: 4;
 }
 
@@ -238,21 +247,24 @@ html {
 
 .toggle {
     margin: 0 24px;
-    background-color: #FFBE0F;
-    padding: 4px 10px;
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
+}
+
+.next:hover,
+.pre:hover,
+.toggle:hover {
+    text-shadow: 0px 0px 10px #ccc, 0px 0px 10px #ccc, 0px 0px 10px #ccc, 0px 0px 10px #ccc;
 }
 
 .pasue {
     display: none;
     margin: 0 24px;
-    background-color: #FFBE0F;
-    padding: 4px 10px;
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
+    text-shadow: 0px 0px 10px #ccc, 0px 0px 10px #ccc, 0px 0px 10px #ccc, 0px 0px 10px #ccc;
 }
 
 .next,
@@ -348,16 +360,8 @@ html {
     overflow-y: scroll;
 }
 
-.list-music-infor::after {
-    position: absolute;
-    content: "";
-    display: block;
-    bottom: 0;
-    background: linear-gradient( transparent, #ccc);
-    opacity: 0.2;
-    width: 85%;
-    height: 200px;
-    border-radius: 22.8218px;
+.list-music-infor .music-infor {
+    border: 4px #cb5d5c solid;
 }
 
 .right-nav {
@@ -406,13 +410,10 @@ html {
     cursor: pointer;
 }
 
-.music-item.active-item {
-    border: 4px #cb5d5c solid;
-}
 
-.active-item {
-    border: 4px #cb5d5c solid;
-}
+/* .active-item {
+    border: solid 4px #cb5d5c;
+} */
 
 .music-item:active {
     opacity: 0.8;
