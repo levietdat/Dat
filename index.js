@@ -117,6 +117,9 @@ const app = {
         cirleimglink.src = this.currensong.image
         name.textContent = this.currensong.singer
     },
+    loadNextSong: function() {
+
+    },
     nextSong: function() {
         this.currentIndex++
             if (this.currentIndex >= this.songs.length) {
@@ -181,13 +184,17 @@ const app = {
             if (audio.duration) {
                 progressPercent = Math.floor(audio.currentTime / audio.duration * 100)
                 progress.value = progressPercent
+                if (progressPercent >= 100) {
+                    _this.currentIndex++
+                        setTimeout(_this.loadCurrentsong(), 10000)
+                    audio.play()
+                }
             }
         }
 
         progress.onchange = function(e) {
             const seekTime = Math.floor(audio.duration / 100 * e.target.value)
             audio.currentTime = seekTime
-
         }
         next.onclick = function() {
             playBtn.style.display = "block"
@@ -287,6 +294,7 @@ const app = {
         this.defineProperties()
         this.handleEvents()
         this.loadCurrentsong()
+        this.loadNextSong()
         this.nextSong()
         this.preSong()
 
